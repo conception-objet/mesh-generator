@@ -1,0 +1,38 @@
+syntax = "proto2";
+
+option java_package = "ca.uqam.ace.inf5153.mesh.io";
+option java_outer_classname = "Structs";
+
+message Property {
+  required string key = 1;
+  required string value = 2;
+}
+
+message Point {
+  required float x = 1;
+  required float y = 2;
+  repeated Property properties = 3;
+}
+
+message Segment {
+  required int32 v1_idx = 1;
+  required int32 v2_idx = 2;
+  repeated Property properties = 3;
+}
+
+message Polygon {
+  required int32 centroid_idx = 1;
+  repeated int32 segment_idx = 2;
+  repeated int32 neighbors = 3;
+  repeated Property properties = 4;
+}
+
+message Mesh {
+  repeated Property properties = 1;
+  repeated Polygon polygons = 2;
+  repeated Segment segments = 3;
+  repeated Point points = 4;
+}
+
+
+
