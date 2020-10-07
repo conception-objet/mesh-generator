@@ -18,11 +18,11 @@ jobs:
         run: mvn -B -P executable install --file pom.xml
       - name: Releasing executable Generator jar
         uses: actions/upload-artifact@v2
-          with:
-            name: generator.jar
-            path: generator/target/inf5153.mesh.generator-1.0-jar-with-dependencies.jar
+        with:
+          name: generator.jar
+          path: generator/target/inf5153.mesh.generator-1.0-jar-with-dependencies.jar
       - name: Releasing executable Visualizer jar
           uses: actions/upload-artifact@v2
-            with:
-              name: visualizer.jar
-              path: visualizer/target/inf5153.mesh.visualizer-1.0-jar-with-dependencies.jar
+          with:
+            name: visualizer.jar
+            path: visualizer/target/inf5153.mesh.visualizer-1.0-jar-with-dependencies.jar
