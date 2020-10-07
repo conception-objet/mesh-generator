@@ -23,7 +23,6 @@ public class NeighboroodBorderCleaner {
                 .collect(Collectors.toSet());
         Set<Set<Coordinate>> borderNeighbors = neighbors.stream()
                 .filter( n -> {
-                    System.out.println(n);
                     Coordinate[] tmp = n.toArray(new Coordinate[0]);
                     return borderCentroids.contains(tmp[0]) && borderCentroids.contains(tmp[1]);
                 }).collect(Collectors.toSet());
