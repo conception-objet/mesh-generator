@@ -9,10 +9,10 @@
   <parent>
     <groupId>io.github.ace-design</groupId>
     <artifactId>inf5153.mesh</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
   </parent>
 
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <artifactId>inf5153.mesh.io</artifactId>
   <name>ACE :: UQAM :: Mesh :: IO</name>
 
@@ -46,8 +46,5 @@
       </plugin>
     </plugins>
   </build>
-
-
-
 
 </project>

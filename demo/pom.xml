@@ -9,15 +9,15 @@
   <parent>
     <groupId>io.github.ace-design</groupId>
     <artifactId>inf5153.mesh</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
   </parent>
 
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <artifactId>inf5153.mesh.demo</artifactId>
-  <name>ACE :: UQAM :: Mesh :: ca.uqam.ace.inf5153.mesh.demo.Demonstration</name>
+  <name>ACE :: UQAM :: Mesh :: Demonstration</name>
 
   <properties>
-    <io.version>1.0-SNAPSHOT</io.version>
+    <io.version>1.0</io.version>
   </properties>
 
   <dependencies>
@@ -28,31 +28,36 @@
     </dependency>
   </dependencies>
 
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <archive>
-            <manifest>
-              <mainClass>ca.uqam.ace.inf5153.mesh.demo.Demonstration</mainClass>
-            </manifest>
-          </archive>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-        </configuration>
-        <executions>
-          <execution>
-            <id>make-assembly</id>
-            <phase>install</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+  <profiles>
+    <profile>
+      <id>executable</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <archive>
+                <manifest>
+                  <mainClass>ca.uqam.ace.inf5153.mesh.demo.Demonstration</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+            <executions>
+              <execution>
+                <id>make-assembly</id>
+                <phase>install</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 </project>
